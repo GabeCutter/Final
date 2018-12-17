@@ -1,0 +1,20 @@
+body {
+    font-family: 'Bungee', cursive;
+    color: black;
+}
+
+nav {
+    z-index: 9;
+}
+
+.navbar {
+    background: linear-gradient(-45deg, #3b679e 0%,#207cca 19%,#207cca 25%,#207cca 30%,#207cca 39%,#2b88d9 76%,#3b679e 86%);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: top 0.3s;
+}
+
+.nav-link {
+    color: black;
+}
