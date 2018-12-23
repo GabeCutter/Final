@@ -14,87 +14,77 @@
     <script src="../js/main.js"></script>
     <script>
         $(document).ready(function() {
-            for(i = 9; i < 19; i++) {
-                eventCard('eventList', 'https://app.ticketmaster.com/discovery/v2/events.json?size=30&stateCode=SC&radius=50&unit=miles&sort=date,asc&apikey=hGAKCnOnFTxtq810ogkSO1aYRXuP2ROk', i);
+            window.onload = loadPage();
+            genNavBar('nav');
+            var fetchLink = 'https://app.ticketmaster.com/discovery/v2/events.json?size=30&stateCode=SC&radius=50&unit=miles&sort=date,asc&apikey=hGAKCnOnFTxtq810ogkSO1aYRXuP2ROk';
+            fetchData(fetchLink);
+            for(i = 9; i < 18; i++) {
+                eventCard('eventList', fetchLink, i);
             }
         });
     </script>
 </head>
 
-<style>
-
-</style>
-
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
-        <a class="navbar-brand nav-link" href="../home.html">SC Ticketmaster</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="../html/product-page1.html">Events Near Me</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <div id="loader"></div>
+    <div class="animate-bottom" id="content" style="display: none;">
+        <div id="nav"></div>
 
-    <div class="container mt-5">
-        <div class="card bg-primary">
-            <h1 class="font-weight-bold text-center mt-5">Events Near Me</h1>
-        </div>
-        
-        <div class="container">
-            <ul class="pagination mt-3 mb-3 justify-content-center">
-                <li class="page-item">
-                    <a class="page-link" href="../html/product-page1.html">Previous</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="../html/product-page1.html">1</a>
-                </li>
-
-                <li class="page-item active">
-                    <a href="#" class="page-link">2</a>
-                </li>
-
-                <li class="page-item">
-                    <a class="page-link" href="../html/product-page3.html">3</a>
-                </li>
-
-                <li class="page-item">
-                    <a class="page-link" href="../html/product-page3.html">Next</a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="container">
-            <div class="card-columns" id="eventList">
-
+        <div class="container p-5 mt-4">
+            <div class="card bg-info p-2">
+                <h1 class="font-weight-bold text-center mt-5">Events Near Me</h1>
             </div>
-        </div>
 
-        <div class="container">
-            <ul class="pagination mt-3 mb-3 justify-content-center">
-                <li class="page-item">
-                    <a class="page-link" href="../html/product-page1.html">Previous</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="../html/product-page1.html">1</a>
-                </li>
+            <div class="container mt-2">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../html/home.html">Home</a></li>
+                    <li class="breadcrumb-item active">Events Near Me</li>
+                </ul>
+            </div>
+            
+            <div class="container">
+                <ul class="pagination mt-3 mb-3 justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="../html/product-page1.html">Previous</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="../html/product-page1.html">1</a>
+                    </li>
+                    <li class="page-item active">
+                        <a href="#" class="page-link">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="../html/product-page3.html">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="../html/product-page3.html">Next</a>
+                    </li>
+                </ul>
+            </div>
 
-                <li class="page-item active">
-                    <a href="#" class="page-link">2</a>
-                </li>
+            <div class="container">
+                <div class="card-columns" id="eventList"></div>
+            </div>
 
-                <li class="page-item">
-                    <a class="page-link" href="../html/product-page3.html">3</a>
-                </li>
-
-                <li class="page-item">
-                    <a class="page-link" href="../html/product-page3.html">Next</a>
-                </li>
-            </ul>
+            <div class="container">
+                <ul class="pagination mt-3 mb-3 justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="../html/product-page1.html">Previous</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="../html/product-page1.html">1</a>
+                    </li>
+                    <li class="page-item active">
+                        <a href="#" class="page-link">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="../html/product-page3.html">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="../html/product-page3.html">Next</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>

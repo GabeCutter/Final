@@ -20,6 +20,25 @@ Problems with product pages when fetching. Check main.js
 
 SPARE CODE FOR EMERGENCY*******
 
+this.onerror = function() {
+        errors++;
+    }
+    whileLoop: while(errors > 0) {    //this loop isn't working... Goal is to reload the page only 3 times at max when a fetching error is present. Increasing setTimeout time stops the 'errors' variable from incrementing but not from errors being sent to the console. Set at 100 to see errors, 400-500 to be errorless.
+        location.reload();
+        reloads++;
+        alert(reloads +" reloads and " +errors +" errors"); 
+        errors = 0;
+        this.onerror = function() {
+            errors++;
+        }
+        if(reloads > 3) {
+            break whileLoop;
+        }
+    }
+    if(errors > 0) {
+        alert(errors +" errors loading the page. Promise not returned within setTimeout time.");
+    }
+
 //fetchData('https://app.ticketmaster.com/discovery/v2/events.json?size=2&keyword=hootie&sort=date,asc&apikey=hGAKCnOnFTxtq810ogkSO1aYRXuP2ROk', '1', 'name').then(data => console.log(data));
 
 /*

@@ -8,13 +8,81 @@ nav {
 }
 
 .navbar {
-    background: linear-gradient(-45deg, #3b679e 0%,#207cca 19%,#207cca 25%,#207cca 30%,#207cca 39%,#2b88d9 76%,#3b679e 86%);
+    background: linear-gradient(to bottom, rgba(30,87,153,0.8) 0%,rgba(30,87,153,1) 16%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(33,99,168,1) 73%,rgba(30,87,153,0.92) 80%,rgba(30,87,153,0.8) 90%,rgba(30,87,153,0) 100%);
     position: fixed;
     width: 100%;
     top: 0;
     transition: top 0.3s;
 }
 
-.nav-link {
-    color: black;
+.mainBG {
+    background: linear-gradient(to bottom, rgba(246,248,247,1) 0%,rgba(219,233,225,1) 7%,rgba(219,233,225,1) 7%,rgba(223,237,228,1) 13%,rgba(223,237,228,1) 16%,rgba(223,237,228,1) 24%,rgba(240,244,242,1) 30%,rgba(240,244,242,1) 36%,rgba(223,237,228,1) 49%,rgba(226,236,230,1) 55%,rgba(223,237,228,1) 67%,rgba(226,242,231,1) 80%,rgba(219,233,224,1) 90%,rgba(209,227,218,1) 99%); 
+}
+
+#loader {
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    z-index: 1;
+    margin: -75px 0 0 -75px;
+    border: 12px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 12px solid #3498db;
+    width: 100px;
+    height: 100px;
+    -webkit-animation: spin 0.4s linear infinite;
+    animation: spin 0.4s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatebottom;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+}
+
+#content {
+    display: none;
+}
+
+#slideshow {
+    height: 700px;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+}
+
+.carousel-item img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.jumbotron {
+    text-shadow: 0 0 3px rgb(162, 0, 255), 0 0 5px #0000FF;
 }
